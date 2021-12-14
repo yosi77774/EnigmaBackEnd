@@ -1,0 +1,16 @@
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\bin\Debug\net5.0\Enigma_demo.exe
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\bin\Debug\net5.0\Enigma_demo.deps.json
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\bin\Debug\net5.0\Enigma_demo.runtimeconfig.json
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\bin\Debug\net5.0\Enigma_demo.runtimeconfig.dev.json
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\bin\Debug\net5.0\Enigma_demo.dll
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\bin\Debug\net5.0\ref\Enigma_demo.dll
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\bin\Debug\net5.0\Enigma_demo.pdb
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.csproj.AssemblyReference.cache
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.AssemblyInfoInputs.cache
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.AssemblyInfo.cs
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.csproj.CoreCompileInputs.cache
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.dll
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\ref\Enigma_demo.dll
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.pdb
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.genruntimeconfig.cache
