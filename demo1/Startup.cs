@@ -44,6 +44,7 @@ namespace demo1
 
             services.AddSingleton<IUserSettings>(d => d.GetRequiredService<IOptions<UserSettings>>().Value);
             services.AddSingleton<UserService>();
+            services.AddSingleton<EnigmaService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -84,8 +85,7 @@ namespace demo1
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

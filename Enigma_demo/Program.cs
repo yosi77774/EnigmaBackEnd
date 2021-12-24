@@ -15,6 +15,7 @@ namespace Enigma_demo
             int[] count2 = new int[26];
             int[] Letter_rating = { 3,19,12,9,1,16,17,8,5,22,21,10,14,6,4,18,22,8,7,2,11,20,13,22,15,23};
             int[] Letter_rating2 = new int[26];
+
             int key1 = 2;
             int key2 = 25;
             int key3 = 8;
@@ -34,7 +35,7 @@ namespace Enigma_demo
             {
                 if (abc2.IndexOf(text[i]) != -1)
                 {
-                    
+                  //  text[i] = "";
                     count[abc2.IndexOf(text[i])]++;
 
                 }
