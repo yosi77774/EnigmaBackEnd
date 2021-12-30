@@ -1,10 +1,12 @@
-﻿using demo1.Services;
+﻿using demo1.models;
+using demo1.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace demo1.Controllers
@@ -20,14 +22,27 @@ namespace demo1.Controllers
             _enigmaService = enigmaService;
         }
 
-        [Authorize]
+     /*   [Authorize]
         [HttpPost]
         public String Encrypt(String keys, string Text)
         {
 
-            
-            var status =  _enigmaService.Encryption(keys, Text.ToUpper());
+            //String keys = "BBB";
+            var status =  _enigmaService.Encryption(keys.ToUpper(), Text.ToUpper());
             return status;
+
+        }*/
+
+        
+
+        [Authorize]
+        [HttpPost]
+        public String Encrypt(EncryptionRequest encryptionRequest)
+        {
+
+            //String keys = "BBB";
+            var status = _enigmaService.Encryption(encryptionRequest.keys.ToUpper(), encryptionRequest.Text.ToUpper());
+            return Convert.ToString(status);
 
         }
     }

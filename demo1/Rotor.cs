@@ -8,11 +8,13 @@ namespace demo1.Services
     public class Rotor
     {
         public string Wiring { get; set; }
+        public int Kesy { get; set; }
         private const string Eng_Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        public Rotor(string rotor)
+        public Rotor(string rotor,int kesy)
         {
             Wiring = rotor;
+            Kesy = kesy;
         }
 
         private string Advance(string wiring, int number)
@@ -30,15 +32,26 @@ namespace demo1.Services
             return rotor;
         }
 
-        public string Encrypt(int advance, string letter)
+        public int EntryEncryption(int advance , int LocationLetter)
         {
             string rotor = Advance(Wiring, advance);
-            int n = Eng_Letters.IndexOf(letter);
-            return rotor.Substring(n, 1);
+            string rotorLetters = Advance(Eng_Letters, advance);
+            char encryptChar = rotor[LocationLetter];
+            int n = rotorLetters.IndexOf(encryptChar);
+            return n;
         }
 
-       
-         public string Decrypt(int advance, string letter)
+        public int ExitEncryption(int advance, int LocationLetter)
+        {
+            string rotor = Advance(Wiring, advance);
+            string rotorLetters = Advance(Eng_Letters, advance);
+            char encryptChar = rotorLetters[LocationLetter];
+            int n = rotor.IndexOf(encryptChar);
+            return n;
+        }
+
+
+        public string Decrypt(int advance, string letter)
         {
             string rotor = Advance(Wiring, advance);
             string bet = Advance(Eng_Letters, advance);

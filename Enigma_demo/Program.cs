@@ -1,9 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Enigma_demo
 {
     class Program
     {
+        private static object rotors;
+
         static String Encryption()
         {
             String text = "OneofthekeyobjectivesfortheAlliesduringWWIIwastofindawaytobreakthecodetobeabletodecryptGermancommunicationsAteamofPolishcryptanalystswasthefirsttobreak";
@@ -351,9 +356,52 @@ namespace Enigma_demo
 
         static void Main(string[] args)
         {
-           
-            Console.WriteLine(Encryption());
-            Deciphering(Encryption());
+            /*var exeFolder = AppDomain.CurrentDomain.BaseDirectory;
+            var filename = Path.Combine(exeFolder, "json1.json");
+
+            var json = File.ReadAllText(filename);
+
+            var key = JsonConvert.DeserializeObject<KeyModel>(json);*/
+
+            //   Console.WriteLine(Encryption());
+            //   Deciphering(Encryption());
+
+            EnigmaSettings enigmaSettings = new EnigmaSettings()
+            {
+
+                rotor1 = "EKMFLGDQVZNTOWYHXUSPAIBRCJ",
+                rotor2 = "AJDKSIRUXBLHWTMCQGZNPYFVOE",
+                rotor3 = "BDFHJLCPRTXVZNYEIWGAKMUSQO",
+                rotor4 = "ESOVPZJAYQUIRHXLNFTGKDCMWB",
+
+                reflector = "YRUHQSLDPXNGOKMIEBFZCWVJAT"
+            };
+
+            var SettingsInJson = JsonConvert.SerializeObject(enigmaSettings);
+            File.WriteAllText("json1.json", SettingsInJson);
+
+            SettingsInJson = String.Empty;
+            SettingsInJson = File.ReadAllText("json1.json");
+
+            EnigmaSettings resultenigmaSettings = JsonConvert.DeserializeObject<EnigmaSettings>(SettingsInJson);
+            /*string writeText = "Hello World!";  // Create a text string
+              File.WriteAllText("filename.json", writeText);
+
+            string readText = File.ReadAllText("filename.json"); // Read the contents of the file
+            */
+            Console.WriteLine(resultenigmaSettings.reflector);
         }
+    }
+    public class EnigmaSettings
+    {
+        public string rotor1 { get; set; }
+        public string rotor2 { get; set; }
+        public string rotor3 { get; set; }
+        public string rotor4 { get; set; }
+        public string rotor5 { get; set; }
+
+      public string reflector { get; set; }
+
+       /*   public List<EnigmaSettings> list { get; set; }*/
     }
 }

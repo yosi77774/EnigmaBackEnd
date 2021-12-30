@@ -14,3 +14,6 @@ C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.dll
 C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\ref\Enigma_demo.dll
 C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.pdb
 C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.genruntimeconfig.cache
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\obj\Debug\net5.0\Enigma_demo.csproj.CopyComplete
+C:\Users\yosi7\source\repos\demo1\Enigma_demo\bin\Debug\net5.0\json1.json

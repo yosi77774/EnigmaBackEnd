@@ -5,7 +5,12 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "demo1", "demo1\demo1.csproj", "{68017C1A-164F-4F9D-B1A4-E9B73B036AB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enigma_demo", "Enigma_demo\Enigma_demo.csproj", "{2FE541D2-87E6-4359-BC8C-11427EF8DE99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enigma_demo", "Enigma_demo\Enigma_demo.csproj", "{2FE541D2-87E6-4359-BC8C-11427EF8DE99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C3A5E746-D7C9-475A-8172-6BAE51675418}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
