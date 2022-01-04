@@ -3,30 +3,33 @@ using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace demo1.Services
 {
     public class EnigmaService
     {
 
+        string abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        public static string abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-        public static Rotor rotor3;
-        public static Rotor rotor2;
-        public static Rotor rotor1;
-        public static Rotor reflector;
-        int[] KeysArr = { 0,0,0 };
+        Rotor rotor3;
+        Rotor rotor2;
+        Rotor rotor1;
+        Rotor reflector;
+        Regex ralpha = new Regex("[A-Z]");
+        int[] KeysArr = { 0, 0, 0 };
         int[] R_Advance = { 0, 0, 0 };
-
+        int[] CuntrAdvance = { 0, 0, 0 };
         int c1;
 
         public StringBuilder Encryption(string keys, string Text)
         {
             int count = 0;
 
-            foreach(var n in keys)
+            foreach (var n in keys)
             {
+                R_Advance[count] = 0;
+                CuntrAdvance[count] = 0;
                 KeysArr[count++] = abc.IndexOf(n);
             }
 
@@ -42,29 +45,38 @@ namespace demo1.Services
             reflector = new Rotor(resultenigmaSettings.reflector, 0);
 
             var output = new StringBuilder();
-            R_Advance[2] = 0;
-            foreach (var c in Text)
-            { 
-                R_Advance[2]++;
-                c1 = rotor3.EntryEncryption(KeysArr[2]+ R_Advance[2],abc.IndexOf(c));
-                c1 = rotor2.EntryEncryption(KeysArr[1] + R_Advance[1], c1) ; 
-                c1 = rotor1.EntryEncryption(KeysArr[0]+ R_Advance[0], c1); 
-                c1 = reflector.EntryEncryption(0, c1);
-                c1 = rotor1.ExitEncryption(KeysArr[0] + R_Advance[0], c1);
-                c1 = rotor2.ExitEncryption(KeysArr[1] + R_Advance[1], c1); 
-                c1 = rotor3.ExitEncryption(KeysArr[2] + R_Advance[2], c1);
 
-               
+            foreach (var c in Text)
+            {
+                if (ralpha.IsMatch(Convert.ToString(c)) == false) {
+
+                    if (Convert.ToString(c) == " ")
+                    {
+                        Increment_Rotors();
+                        reset_Rotors(abc.IndexOf("X"));
+                        output.Append(abc[c1]);
+                        Increment_Rotors();
+                        reset_Rotors(abc.IndexOf("X"));
+                        output.Append(abc[c1]);
+                    }
+                    else
+                    {
+                        Increment_Rotors();
+                        reset_Rotors(abc.IndexOf("Z"));
+                        output.Append(abc[c1]);
+                        Increment_Rotors();
+                        reset_Rotors(abc.IndexOf("Z"));
+                        output.Append(abc[c1]);
+                    }
+
+                }
+                else { 
+                Increment_Rotors();
+                reset_Rotors(abc.IndexOf(c));
                 output.Append(abc[c1]);
+                }
             }
 
-            /*for (int i = 0; i < Text.Length; i++)
-            {
-                string Output = "";
-                Char Input = Convert.ToChar(Text.Substring(i, 1));
-                Output = rotor3.Encrypt(Input);
-                //output += Output;
-            }*/
             return output;
         }
 
@@ -78,6 +90,46 @@ namespace demo1.Services
         {
             return 0;
         }
+
+        private void Increment_Rotors()
+        {
+            R_Advance[2]++;
+            CuntrAdvance[2]++;
+            if (KeysArr[2] + R_Advance[2] > 25) {
+                R_Advance[2] = -KeysArr[2];
+            }
+
+            if (CuntrAdvance[2] > 25) {
+                R_Advance[1]++;
+            }
+
+            if (KeysArr[1] + R_Advance[1] > 25)
+            {
+                R_Advance[1] = -KeysArr[2];
+            }
+
+            if (CuntrAdvance[1] > 25)
+            {
+                R_Advance[0]++;
+            }
+
+            if (KeysArr[0] + R_Advance[0] > 25)
+            {
+                R_Advance[0] = -KeysArr[0];
+            }
+        }
+
+        private void reset_Rotors(int c)
+        {
+            c1 = rotor3.EntryEncryption(KeysArr[2] + R_Advance[2],c);
+            c1 = rotor2.EntryEncryption(KeysArr[1] + R_Advance[1], c1);
+            c1 = rotor1.EntryEncryption(KeysArr[0] + R_Advance[0], c1);
+            c1 = reflector.EntryEncryption(0, c1);
+            c1 = rotor1.ExitEncryption(KeysArr[0] + R_Advance[0], c1);
+            c1 = rotor2.ExitEncryption(KeysArr[1] + R_Advance[1], c1);
+            c1 = rotor3.ExitEncryption(KeysArr[2] + R_Advance[2], c1);
+        }
+
     }
 
 

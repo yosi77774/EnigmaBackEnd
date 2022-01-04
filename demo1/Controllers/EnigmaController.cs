@@ -1,13 +1,12 @@
 ﻿using demo1.models;
 using demo1.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace demo1.Controllers
 {
@@ -15,6 +14,7 @@ namespace demo1.Controllers
     [ApiController]
     public class EnigmaController : ControllerBase
     {
+
         public EnigmaService _enigmaService;
 
         public EnigmaController(EnigmaService enigmaService)
@@ -22,28 +22,28 @@ namespace demo1.Controllers
             _enigmaService = enigmaService;
         }
 
-     /*   [Authorize]
-        [HttpPost]
-        public String Encrypt(String keys, string Text)
-        {
-
-            //String keys = "BBB";
-            var status =  _enigmaService.Encryption(keys.ToUpper(), Text.ToUpper());
-            return status;
-
-        }*/
-
-        
-
         [Authorize]
         [HttpPost]
-        public String Encrypt(EncryptionRequest encryptionRequest)
+        public String Encrypt([FromForm] EncryptionRequest encryptionRequest)
         {
+              StringBuilder status;
 
-            //String keys = "BBB";
-            var status = _enigmaService.Encryption(encryptionRequest.keys.ToUpper(), encryptionRequest.Text.ToUpper());
-            return Convert.ToString(status);
+              if (encryptionRequest.file == null) 
+            {
+                   status = _enigmaService.Encryption(encryptionRequest.keys.ToUpper(), encryptionRequest.Text.ToUpper());
+            }
+            
+            else
+            {
+                StreamReader reader = new StreamReader(encryptionRequest.file.OpenReadStream());
+                String file = reader.ReadToEnd();
+                reader.Dispose();
+                status = _enigmaService.Encryption(encryptionRequest.keys.ToUpper(), file.ToUpper());
+            }
+
+             return Convert.ToString(status);
 
         }
+
     }
 }
