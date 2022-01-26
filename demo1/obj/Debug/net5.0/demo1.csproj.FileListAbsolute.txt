@@ -46,5 +46,6 @@ C:\Users\yosi7\source\repos\demo1\demo1\bin\Debug\net5.0\Microsoft.IdentityModel
 C:\Users\yosi7\source\repos\demo1\demo1\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\yosi7\source\repos\demo1\demo1\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\yosi7\source\repos\demo1\demo1\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\yosi7\source\repos\demo1\demo1\bin\Debug\net5.0\EnigmaSettings.json
 C:\Users\yosi7\source\repos\demo1\demo1\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\yosi7\source\repos\demo1\demo1\bin\Debug\net5.0\Settings_data\EnigmaSettings.json
+C:\Users\yosi7\source\repos\demo1\demo1\bin\Debug\net5.0\Settings_data\HackingSettings.json

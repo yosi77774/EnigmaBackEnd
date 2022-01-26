@@ -45,6 +45,7 @@ namespace demo1
             services.AddSingleton<IUserSettings>(d => d.GetRequiredService<IOptions<UserSettings>>().Value);
             services.AddSingleton<UserService>();
             services.AddSingleton<EnigmaService>();
+            services.AddSingleton<HackingService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

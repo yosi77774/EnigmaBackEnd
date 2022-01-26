@@ -1,12 +1,13 @@
 ﻿using demo1.models;
-using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace demo1.Services
 {
+
     public class EnigmaService
     {
 
@@ -21,10 +22,32 @@ namespace demo1.Services
         int[] R_Advance = { 0, 0, 0 };
         int[] CuntrAdvance = { 0, 0, 0 };
         int c1;
+        EnigmaSettings enigmaSettings = new EnigmaSettings();
+        EnigmaComponents resultenigmaSettings;
 
-        public StringBuilder Encryption(string keys, string Text)
+
+            public async Task<String> Encryption(EncryptionRequest encryptionRequest)
         {
+            string Text;
+            string keys;
             int count = 0;
+            resultenigmaSettings = enigmaSettings.Settings;
+
+            if (encryptionRequest.file == null)
+            {
+                Text = encryptionRequest.Text.ToUpper();
+                keys = encryptionRequest.keys.ToUpper(); 
+            }
+
+            else
+            {
+                StreamReader reader = new StreamReader(encryptionRequest.file.OpenReadStream());
+                String file = reader.ReadToEnd();
+                reader.Dispose();
+
+                Text = file.ToUpper();
+                keys = encryptionRequest.keys.ToUpper();
+            }
 
             foreach (var n in keys)
             {
@@ -32,12 +55,6 @@ namespace demo1.Services
                 CuntrAdvance[count] = 0;
                 KeysArr[count++] = abc.IndexOf(n);
             }
-
-            var SettingsInJson = String.Empty;
-            SettingsInJson = File.ReadAllText("EnigmaSettings.json");
-
-            EnigmaSettings resultenigmaSettings = JsonConvert.DeserializeObject<EnigmaSettings>(SettingsInJson);
-
 
             rotor3 = new Rotor(resultenigmaSettings.rotor3, KeysArr[2]);
             rotor2 = new Rotor(resultenigmaSettings.rotor2, KeysArr[1]);
@@ -48,9 +65,10 @@ namespace demo1.Services
 
             foreach (var c in Text)
             {
-                if (ralpha.IsMatch(Convert.ToString(c)) == false) {
+                if (ralpha.IsMatch(Convert.ToString(c)) == false)
+                {
 
-                    if (Convert.ToString(c) == " ")
+                    if (c == ' ')
                     {
                         Increment_Rotors();
                         reset_Rotors(abc.IndexOf("X"));
@@ -70,36 +88,28 @@ namespace demo1.Services
                     }
 
                 }
-                else { 
-                Increment_Rotors();
-                reset_Rotors(abc.IndexOf(c));
-                output.Append(abc[c1]);
+                else
+                {
+                    Increment_Rotors();
+                    reset_Rotors(abc.IndexOf(c));
+                    output.Append(abc[c1]);
                 }
             }
 
-            return output;
-        }
-
-        static void Deciphering(String textEncryption)
-
-        {
-
-        }
-
-        static int Frequency_analysis(String str_analysis)
-        {
-            return 0;
+            return Convert.ToString(output);
         }
 
         private void Increment_Rotors()
         {
             R_Advance[2]++;
             CuntrAdvance[2]++;
-            if (KeysArr[2] + R_Advance[2] > 25) {
+            if (KeysArr[2] + R_Advance[2] > 25)
+            {
                 R_Advance[2] = -KeysArr[2];
             }
 
-            if (CuntrAdvance[2] > 25) {
+            if (CuntrAdvance[2] > 25)
+            {
                 R_Advance[1]++;
             }
 
@@ -121,7 +131,7 @@ namespace demo1.Services
 
         private void reset_Rotors(int c)
         {
-            c1 = rotor3.EntryEncryption(KeysArr[2] + R_Advance[2],c);
+            c1 = rotor3.EntryEncryption(KeysArr[2] + R_Advance[2], c);
             c1 = rotor2.EntryEncryption(KeysArr[1] + R_Advance[1], c1);
             c1 = rotor1.EntryEncryption(KeysArr[0] + R_Advance[0], c1);
             c1 = reflector.EntryEncryption(0, c1);

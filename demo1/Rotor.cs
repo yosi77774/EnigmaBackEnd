@@ -50,14 +50,5 @@ namespace demo1.Services
             return n;
         }
 
-
-        public string Decrypt(int advance, string letter)
-        {
-            string rotor = Advance(Wiring, advance);
-            string bet = Advance(Eng_Letters, advance);
-            letter = bet.Substring(Eng_Letters.IndexOf(letter), 1);
-            int n = rotor.IndexOf(letter);
-            return Eng_Letters.Substring(n, 1);
-        }/* */
     }
 }

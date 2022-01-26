@@ -24,20 +24,7 @@ namespace demo1.Services
         {
         }
 
-        /*
-
-public List<User> GetUsers()
-{
-   return _Users.Find(us => true).ToList();
-  // return _Users.Find(new BsonDocument()).ToList();
-}
-
-public User Create(User user)
-{
-   _Users.InsertOne(user);
-   return user;
-}*/
-
+     
         public async Task<List<User>> GetAsync()
         {
             List<User> users1 = await _Users.Find(u => true).ToListAsync();
