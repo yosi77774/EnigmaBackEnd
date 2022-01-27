@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xfDQ7rS0CBFPqxbSESZ/oFTypi1H9QBhu9nz1Szwcs2Jpu82YLe5WWw8UWz7B3PaE8lYB8IwII/UX0D/KDP/1w==",
+  "dgSpecHash": "bq7A4M8LFaGF+gRdTuhUOWlSyMPK9xmAgGiMscPYvBu+X0lhV6X7dvd9Xnp0xWd7icbNeZY2zQ6f1OWYhlkfDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yosi7\\source\\repos\\demo1\\demo1\\demo1.csproj",
+  "projectFilePath": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\demo1\\EnigmaServer1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yosi7\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\yosi7\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

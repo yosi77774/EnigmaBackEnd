@@ -1,5 +1,5 @@
-using demo1.models;
-using demo1.Services;
+using EnigmaServer1.models;
+using EnigmaServer1.Services;
 using System;
 using System.Text;
 using Xunit;
@@ -33,7 +33,7 @@ namespace testings
             //Act
             encryptionRequest.Text = await _enigmaService.Encryption(encryptionRequest);
             result = await _enigmaService.Encryption(encryptionRequest);
-            Console.WriteLine(result+" ----------- ");
+           
 
 
             //Assert

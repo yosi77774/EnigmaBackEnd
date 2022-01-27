@@ -2142,11 +2142,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yosi7\\source\\repos\\demo1\\demo1\\demo1.csproj",
-      "projectName": "demo1",
-      "projectPath": "C:\\Users\\yosi7\\source\\repos\\demo1\\demo1\\demo1.csproj",
+      "projectUniqueName": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\demo1\\EnigmaServer1.csproj",
+      "projectName": "EnigmaServer1",
+      "projectPath": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\demo1\\EnigmaServer1.csproj",
       "packagesPath": "C:\\Users\\yosi7\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yosi7\\source\\repos\\demo1\\demo1\\obj\\",
+      "outputPath": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\demo1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -8,9 +8,9 @@
     ".NETCoreApp,Version=v5.0": {
       "testings/1.0.0": {
         "dependencies": {
+          "EnigmaServer1": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.9.4",
           "coverlet.collector": "3.0.2",
-          "demo1": "1.0.0",
           "xunit": "2.4.1",
           "xunit.runner.visualstudio": "2.4.3"
         },
@@ -1411,21 +1411,7 @@
           }
         }
       },
-      "xunit.runner.visualstudio/2.4.3": {},
-      "demo1/1.0.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Authentication": "2.2.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.12",
-          "Microsoft.AspNetCore.Cors": "2.2.0",
-          "MongoDB.Driver": "2.13.2",
-          "Newtonsoft.Json": "13.0.1",
-          "Swashbuckle.AspNetCore": "5.6.3",
-          "System.IdentityModel.Tokens.Jwt": "6.14.1"
-        },
-        "runtime": {
-          "demo1.dll": {}
-        }
-      }
+      "xunit.runner.visualstudio/2.4.3": {}
     }
   },
   "libraries": {
@@ -2441,11 +2427,6 @@
       "sha512": "sha512-kZZSmOmKA8OBlAJaquPXnJJLM9RwQ27H7BMVqfMLUcTi9xHinWGJiWksa3D4NEtz0wZ/nxd2mogObvBgJKCRhQ==",
       "path": "xunit.runner.visualstudio/2.4.3",
       "hashPath": "xunit.runner.visualstudio.2.4.3.nupkg.sha512"
-    },
-    "demo1/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

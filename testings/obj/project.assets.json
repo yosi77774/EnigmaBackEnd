@@ -2328,7 +2328,7 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "demo1/1.0.0": {
+      "EnigmaServer1/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
@@ -2341,10 +2341,10 @@
           "System.IdentityModel.Tokens.Jwt": "6.14.1"
         },
         "compile": {
-          "bin/placeholder/demo1.dll": {}
+          "bin/placeholder/EnigmaServer1.dll": {}
         },
         "runtime": {
-          "bin/placeholder/demo1.dll": {}
+          "bin/placeholder/EnigmaServer1.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -7604,17 +7604,17 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "demo1/1.0.0": {
+    "EnigmaServer1/1.0.0": {
       "type": "project",
-      "path": "../demo1/demo1.csproj",
-      "msbuildProject": "../demo1/demo1.csproj"
+      "path": "../demo1/EnigmaServer1.csproj",
+      "msbuildProject": "../demo1/EnigmaServer1.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "EnigmaServer1 >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
       "coverlet.collector >= 3.0.2",
-      "demo1 >= 1.0.0",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
     ]
@@ -7626,11 +7626,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yosi7\\source\\repos\\demo1\\testings\\testings.csproj",
+      "projectUniqueName": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\testings\\testings.csproj",
       "projectName": "testings",
-      "projectPath": "C:\\Users\\yosi7\\source\\repos\\demo1\\testings\\testings.csproj",
+      "projectPath": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\testings\\testings.csproj",
       "packagesPath": "C:\\Users\\yosi7\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yosi7\\source\\repos\\demo1\\testings\\obj\\",
+      "outputPath": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\testings\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7651,8 +7651,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\yosi7\\source\\repos\\demo1\\demo1\\demo1.csproj": {
-              "projectPath": "C:\\Users\\yosi7\\source\\repos\\demo1\\demo1\\demo1.csproj"
+            "C:\\Users\\yosi7\\source\\repos\\Enigma1\\demo1\\EnigmaServer1.csproj": {
+              "projectPath": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\demo1\\EnigmaServer1.csproj"
+            },
+            "C:\\Users\\yosi7\\source\\repos\\Enigma1\\EnigmaServer1\\EnigmaServer1.csproj": {
+              "projectPath": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\EnigmaServer1\\EnigmaServer1.csproj"
             }
           }
         }

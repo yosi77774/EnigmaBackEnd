@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yosi7\\source\\repos\\demo1\\Enigma_demo\\Enigma_demo.csproj": {}
+    "C:\\Users\\yosi7\\source\\repos\\Enigma1\\Enigma_demo\\Enigma_demo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yosi7\\source\\repos\\demo1\\Enigma_demo\\Enigma_demo.csproj": {
+    "C:\\Users\\yosi7\\source\\repos\\Enigma1\\Enigma_demo\\Enigma_demo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yosi7\\source\\repos\\demo1\\Enigma_demo\\Enigma_demo.csproj",
+        "projectUniqueName": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\Enigma_demo\\Enigma_demo.csproj",
         "projectName": "Enigma_demo",
-        "projectPath": "C:\\Users\\yosi7\\source\\repos\\demo1\\Enigma_demo\\Enigma_demo.csproj",
+        "projectPath": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\Enigma_demo\\Enigma_demo.csproj",
         "packagesPath": "C:\\Users\\yosi7\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yosi7\\source\\repos\\demo1\\Enigma_demo\\obj\\",
+        "outputPath": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\Enigma_demo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

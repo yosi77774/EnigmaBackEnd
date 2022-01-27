@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cRL9wh3cSej4w2MXvUbARgi0t1Ud3IVaWqOfiPIgU6cJa/n5AMy271BPBaVJSR0OtGOAlBodOwxmZFG1mqhdKA==",
+  "dgSpecHash": "NCR26ayOvr4M6KgMkTwg/uIn24BLV2UFA73JKG8yzJ0q/WfhSV+F2ocZbNH9FMxkiKGOLIzDMNvvLgwP4+KNeA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yosi7\\source\\repos\\demo1\\testings\\testings.csproj",
+  "projectFilePath": "C:\\Users\\yosi7\\source\\repos\\Enigma1\\testings\\testings.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yosi7\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\yosi7\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
