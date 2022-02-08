@@ -11,7 +11,7 @@ namespace EnigmaServer1.Services
     public class EnigmaService
     {
 
-        string abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const string abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         Rotor rotor3;
         Rotor rotor2;
@@ -26,7 +26,7 @@ namespace EnigmaServer1.Services
         EnigmaComponents resultenigmaSettings;
 
 
-            public async Task<String> Encryption(EncryptionRequest encryptionRequest)
+        public async Task<String> Encryption(EncryptionRequest encryptionRequest)
         {
             string Text;
             string keys;
@@ -36,7 +36,7 @@ namespace EnigmaServer1.Services
             if (encryptionRequest.file == null)
             {
                 Text = encryptionRequest.Text.ToUpper();
-                keys = encryptionRequest.keys.ToUpper(); 
+                keys = encryptionRequest.keys.ToUpper();
             }
 
             else

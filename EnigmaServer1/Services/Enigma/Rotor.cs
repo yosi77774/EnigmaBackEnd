@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿
 namespace EnigmaServer1.Services
 {
     public class Rotor
@@ -11,7 +7,7 @@ namespace EnigmaServer1.Services
         public int Kesy { get; set; }
         private const string Eng_Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        public Rotor(string rotor,int kesy)
+        public Rotor(string rotor, int kesy)
         {
             Wiring = rotor;
             Kesy = kesy;
@@ -32,7 +28,7 @@ namespace EnigmaServer1.Services
             return rotor;
         }
 
-        public int EntryEncryption(int advance , int LocationLetter)
+        public int EntryEncryption(int advance, int LocationLetter)
         {
             string rotor = Advance(Wiring, advance);
             string rotorLetters = Advance(Eng_Letters, advance);

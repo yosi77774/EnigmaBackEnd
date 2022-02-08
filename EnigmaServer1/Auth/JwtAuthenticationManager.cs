@@ -9,7 +9,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EnigmaServer1
+namespace EnigmaServer1.Auth
 {
     public class JwtAuthenticationManager
     {

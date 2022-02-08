@@ -27,9 +27,9 @@ namespace EnigmaServer1.Services
         public async Task <String> Hacking(HackingRequest hackingRequest)
         {
             String[] abc2 = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-            String textEncryption;
+           // String textEncryption;
             int max = 0;
-            String Encrypted_text2;
+            String Encrypted_Text;
             int Frequency_analysis_Result;
             String Keys = "AAA";
             String Returnkey = "";
@@ -60,15 +60,15 @@ namespace EnigmaServer1.Services
             while (true) {
 
                 encryptionRequest.keys = Keys;
-                Encrypted_text2 = await _enigmaService.Encryption(encryptionRequest);
+                Encrypted_Text = await _enigmaService.Encryption(encryptionRequest);
 
-                Frequency_analysis_Result = await Frequency_analysis(Encrypted_text2);
+                Frequency_analysis_Result = await Frequency_analysis(Encrypted_Text);
 
                 if (Frequency_analysis_Result > max)
                 {
                     Returnkey = Keys;
                     max = Frequency_analysis_Result;
-                    Result = Encrypted_text2;
+                    Result = Encrypted_Text;
                 }
 
 

@@ -1,4 +1,5 @@
-﻿using EnigmaServer1.models;
+﻿using EnigmaServer1.Auth;
+using EnigmaServer1.models;
 using EnigmaServer1.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

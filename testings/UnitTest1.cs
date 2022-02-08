@@ -13,7 +13,7 @@ namespace testings
         String result;
         String[] abc = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
 
-
+        //בדיקת שהחזר הצפנה שווה לטקסט מקור
         [Fact]
         public async void Test1()
         {
@@ -33,34 +33,17 @@ namespace testings
             //Act
             encryptionRequest.Text = await _enigmaService.Encryption(encryptionRequest);
             result = await _enigmaService.Encryption(encryptionRequest);
-           
+
 
 
             //Assert
-            Assert.Equal(text.ToString(), result);  
+            Assert.Equal(text.ToString(), result);
 
         }
 
+        //בדיקה שתווים שנשלחים לא מגיעים בהחזר
         [Fact]
         public async void Test2()
-        {
-            // Arrange
-            String CompText = "GSPHDX";
-            EncryptionRequest encryptionRequest = new EncryptionRequest();
-            encryptionRequest.Text = "ENIGMA";
-            encryptionRequest.keys = "DOG";
-
-            //Act
-            result = await _enigmaService.Encryption(encryptionRequest);
-
-
-            //Assert
-            Assert.Equal(CompText, result);
-
-        }
-
-        [Fact]
-        public async void Test3()
         {
             // Arrange
             String result;
@@ -85,8 +68,28 @@ namespace testings
             //Assert
             foreach (var c in result)
             {
-                    Assert.True(c != text[count++]);
+                Assert.True(c != text[count++]);
             }
+
+        }
+
+
+        //בדיקת החזר צפוי
+        [Fact]
+        public async void Test3()
+        {
+            // Arrange
+            String CompText = "GSPHDX";
+            EncryptionRequest encryptionRequest = new EncryptionRequest();
+            encryptionRequest.Text = "ENIGMA";
+            encryptionRequest.keys = "DOG";
+
+            //Act
+            result = await _enigmaService.Encryption(encryptionRequest);
+
+
+            //Assert
+            Assert.Equal(CompText, result);
 
         }
 
